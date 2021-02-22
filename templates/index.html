@@ -1,10 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-{% include "header.html" %}
+<div class='container md-5 mt-5'>
+    <div class='input-group mb-3'>
+        <span class='input-group-text'>登録フォームのURL</span>
+        <input class='form-control' value='{{ fullurl(request, '/create') }}'>
+    </div>
+    <div class='mt-4 d-flex flex-wrap'>
 {% for prof in profs %}
-<a href="{{url("/:id")}}">
-    <img src="{{dataurl(prof.image)}}" />
-    <div>{{prof.name}}</div>  
-</a>
+        <a href="{{url("/" + prof._id)}}" class='card' style='width: 18rem'>
+            <img src="{{dataurl(prof.image)}}" class='card-img-top'/>
+            <div class='card-body'>
+                <h5 class='card-title'>{{prof.name}}</h5>
+            </div>
+        </a>
 {% endfor %}
+    </div>
+</div>
 {% endblock %}

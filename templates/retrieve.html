@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='container'>
+    <h1 class='mb-3'>{{prof.name}}</h1>
+    <img src="{{ dataurl(prof.image) }}" />
+    <dl>
+        <dt>入会年度</dt>
+        <dd>{{prof.epoch}}</dd>
+        <dt>ハッシュタグ</dt>
+        <dd>
+            {% for tag in prof.tags %}
+                {{tag.name}}
+            {% endfor %}
+        </dd>
+        <dt>自己紹介</dt>
+        <dd>{{prof.description}}</dd>
+    </dl>
+    {% if isbd %}
+    <dl>
+        <dt>LCMへの参加</dt>
+        <dd>{% if prof.lcm %}はい{% else %}いいえ{% endif %}</dd>
+        <dt>メンターとしての参加</dt>
+        <dd>{% if prof.mentor %}はい{% else %}いいえ{% endif %}</dd>
+        <dt>Alumnightへの参加</dt>
+        <dd>{% if prof.alumnight %}はい{% else %}いいえ{% endif %}</dd>
+    </dl>
+    {% endif %}
+</div>
+{% endblock %}

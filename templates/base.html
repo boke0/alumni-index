@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <meta name="viewport" content='width=device-width, initial-scale=1'>
-        <title>Alumni図鑑</title>
-        <link rel="stylesheet" href="{{url('/static/style.css')}}" />
-    </head>
-    <body>
-        {% block content %}
-        {% endblock %}
-    </body>
-</html>
+{% extends "base/plain" %}
+{% block body %}
+<div class='container-maxwidth'>
+    <nav class='navbar navbar-light bg-primary'>
+        <div class='container-fluid'>
+            <a href='{{ url('/') }}' class='navbar-brand'>Alumni図鑑</a>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</div>
+{% endblock %}

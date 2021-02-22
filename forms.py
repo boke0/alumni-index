@@ -1,9 +1,12 @@
 from mitama.app.forms import Form, Field, FileField
 
 class ProfileForm(Form):
-    name = Field(required=True)
-    epoch = Field(required=True)
-    tags = Field(required=True)
-    description = Field(required=True)
-    image = FileField(required=True)
+    name = Field(label='名前', required=True)
+    epoch = Field(label='入会年度', required=True)
+    tags = Field(label='ハッシュタグ', required=True)
+    description = Field(label='自己紹介', required=True)
+    image = FileField(label='写真', required=True)
+    lcm = Field()
+    mentor = Field()
+    alumnight = Field()
 
